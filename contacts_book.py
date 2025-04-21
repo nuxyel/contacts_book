@@ -158,43 +158,47 @@ def print_menu():
     print("0 - Exit")
     print("----------------------------------------")
 
-load()
-print(">>>>>> Contact Book by r3n4n <<<<<<")
+def main():
+    load()
+    print(">>>>>> Contact Book by r3n4n <<<<<<")
 
-while True:
-    print_menu()
+    while True:
+        print_menu()
 
-    option = input("Choose an option: ")
-    if option == '1':
-        show_contacts()
-    elif option == '2':
-        name = input("Enter contact name: ")
-        search_contact(name)
-    elif option == '3':
-        name = input("Enter contact name: ")
-        if name in CONTACTS:
-            print("[ERROR] Contact already exists!")
+        option = input("Choose an option: ")
+        if option == '1':
+            show_contacts()
+        elif option == '2':
+            name = input("Enter contact name: ")
+            search_contact(name)
+        elif option == '3':
+            name = input("Enter contact name: ")
+            if name in CONTACTS:
+                print("[ERROR] Contact already exists!")
+            else:
+                phone, email, address = read_contact_details()
+                add_contact(name, phone, email, address)
+        elif option == '4':
+            contact = input("Enter the contact name: ")
+            edit_contact(contact)
+        elif option == '5':
+            name = input("Enter contact name: ")
+            delete_contact(name)
+        elif option == '6':
+            file_name = input("Enter file name: ")
+            export_contacts(file_name)
+        elif option == '7':
+            file_name = input("Enter file name: ")
+            import_contacts(file_name)
+        elif option == '8':
+            filter_type = input("Search by (phone/email/address): ").lower()
+            value = input(f"Enter {filter_type} to search for: ")
+            search_contacts_by_filter(filter_type, value)
+        elif option == '0':
+            print("[INFO] Exiting contact book.")
+            break
         else:
-            phone, email, address = read_contact_details()
-            add_contact(name, phone, email, address)
-    elif option == '4':
-        contact = input("Enter the contact name: ")
-        edit_contact(contact)
-    elif option == '5':
-        name = input("Enter contact name: ")
-        delete_contact(name)
-    elif option == '6':
-        file_name = input("Enter file name: ")
-        export_contacts(file_name)
-    elif option == '7':
-        file_name = input("Enter file name: ")
-        import_contacts(file_name)
-    elif option == '8':
-        filter_type = input("Search by (phone/email/address): ").lower()
-        value = input(f"Enter {filter_type} to search for: ")
-        search_contacts_by_filter(filter_type, value)
-    elif option == '0':
-        print("[INFO] Exiting contact book.")
-        break
-    else:
-        print("[ERROR] Invalid option.")
+            print("[ERROR] Invalid option.")
+
+if __name__ == "__main__":
+    main()
