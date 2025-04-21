@@ -27,7 +27,7 @@ git clone https://github.com/nuxyel/contacts_book.git
 Open the terminal, navigate to the folder where the repository was cloned, and run the script:
 
 ```bash
-python3 contact_book.py
+python3 contacts_book.py
 ```
 
 ### Step 3: Interaction
