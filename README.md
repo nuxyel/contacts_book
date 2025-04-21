@@ -1,6 +1,6 @@
-# Contact Book
+# Contacts Book
 
-This is a simple **contact book** application developed as part of the **Introduction to Python and Algorithms** module of **Solyd Offensive Security**.
+This is a simple **contacts book** application developed as part of the **Introduction to Python and Algorithms** module of **Solyd Offensive Security**.
 
 The main goal of this project is to store, edit, search, delete, and export contacts, all within a Python script running in the terminal.
 
